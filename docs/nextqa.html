@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="renderer" content="webkit">
+        <title>nextqa</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="nextqa">
+        <link href="./resources/bootstrap.min.css" rel="stylesheet">
+        <link href="./resources/common.css" rel="stylesheet">
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="">
+		<div style="max-width: 900px;margin:auto;">
+            <section id="introduction" class="scrollable-section">
+                <div class="content-container">
+                    <h3 align="center">NExT-QA: Next Phase of Question-Answering to Explaining Temporal Actions</h3>
+					<table align="center" width="600px">
+					<tbody><tr>
+	  	              <td align="center" width="100px">
+	  					<center>
+	  						<span style="font-size:18px"><a href="#">Junbin Xiao</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="100px">
+	  					<center>
+	  						<span style="font-size:18px"><a href="#">Xindi Shang</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="100px">
+	  					<center>
+	  						<span style="font-size:18px"><a href="#">Angela Yao</a></span>
+		  		  		</center>
+		  		  	  </td>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:18px"><a href="#">Tat-Seng Chua</a></span>
+						</center>
+					</td>
+				</tr>
+				</tbody></table>
+				<a href="https://arxiv.org/pdf/2105.08276.pdf">
+				<img src="resources/images/paper.jpg" style="width:100%;border: 0px solid #AAA;">
+				</a>
+			<iframe width="750" height="470" style="display:block; margin-left: auto; margin-right: auto;"
+				src="https://www.youtube.com/embed/j0XB0LCoJ1k">
+				</iframe>
+                </div>
+            </section>
+        <div style="max-width: 900px;margin:auto;">
+            <section id="introduction" class="scrollable-section">
+                <div class="content-container">
+                    <h3>Introduction</h3>
+					<p>
+					Actions in videos are often not independent but rather related with causal and temporal relationships. For example, in the video shown below, a toddler cries because he
+				falls, and a lady runs to the toddler in order to pick him up. Recognizing the objects “toddler”, “lady” and describing the independent action contents like “a toddler is crying”
+				and “a lady picks the toddler up” in a video are now attainable with advanced neural network models. Yet being able to reason about their causal and temporal relations
+				and answer natural language questions (e.g., “Why is the toddler crying?”, “How did the lady react after the toddler fell?”), which lies at the core of human intelligence, remains a great challenge for computational models and is also much less explored by existing video understanding tasks.
+				<strong>NExT-QA</strong> is proposed to benchmark such a problem; it hosts causal and temporal action reasoning in video question answering and it is also rich in object interactions in daily activities. 
+                    </p>
+					<center>
+					  <a><img class="rounded" src="./resources/images/intro.png" width="900px"></a><br>
+				</center>
+                </div>
+            </section>
+            <section id="statistics" class="scrollable-section">
+                <div class="content-container">
+                <h3>Data Statistics</h3>
+                        <strong>NExT-QA</strong> contains a total of 5440 videos with average length of 44s and about 52K manually annotated question-answer pairs grouped into causal (48%),temporal (29%) and descriptive (23%) questions. We specially annotate for each video about 10 questions covering different kinds of contents. The dataset are split into train/val/test: 3870/570/1000, in which
+                        the 1000 test videos are <del>held out for online evaluation</del> <a href="https://drive.google.com/file/d/1_MEqDeQHc8Y8Uw7eW58HVuZy2iyThILQ/view?usp=sharing", target="_blank">released</a>. 
+                </div>
+            
+                    <div class="row">
+                        <div style="height:500px;" class="col-md-6 col-xs-12" id="sunburst"></div>
+                        <div style="height:500px;" class="col-md-6 col-xs-12">
+                            <div style="width:100%;height:250px;" id="histogram"></div>
+                            <div style="width:100%;height:250px;" id="bar"></div>
+                        </div>
+                        <div style="" class="col-md-12 col-xs-12" id="table">
+                            <div class="col-md-5 col-xs-12 title" style="padding:0">
+                                <div style="" class="section">
+                                    <div style="height:46px;width:100%">
+                                        <div class="col-md-12 col-xs-12 text" >Videos</div>
+                                    </div>
+                                    <div style="height:2px;margin:0 4%;background: black"></div>
+                                    <div style="height:18px;width:100%">
+                                        <div class="col-md-3 col-xs-3 text" >Train</div>
+                                        <div class="col-md-3 col-xs-3 text" >Val</div>
+                                        <div class="col-md-3 col-xs-3 text" >Test</div>
+                                        <div class="col-md-3 col-xs-3 text" >Total</div>
+                                    </div>
+                                </div>
+                                <div style="" class="section">
+                                    <div class="col-md-3 col-xs-3 data" style="line-height:100px">3,870</div>
+                                    <div class="col-md-3 col-xs-3 data" style="line-height:100px">570</div>
+                                    <div class="col-md-3 col-xs-3 data" style="line-height:100px">1,000</div>
+                                    <div class="col-md-3 col-xs-3 data" style="line-height:100px">5,440</div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-xs-12 title" style="padding:0">
+                                <div style="line-height: 100px" class="section">
+                                    Tasks
+                                </div>
+                                <div style="font-size:16px;font-weight: 600;line-height: 45px" class="section">
+                                    Multi-choice QA<br/>
+                                    Open-ended QA
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-xs-12 title" style="padding:0">
+                                <div style="" class="section">
+                                    <div style="height:46px;width:100%">
+                                        <div class="col-md-12 col-xs-12 text" >Questions</div>
+                                    </div>
+                                    <div style="height:2px;margin:0 4%;background: black"></div>
+                                    <div style="height:18px;width:100%">
+                                        <div class="col-md-3 col-xs-3 text" >Train</div>
+                                        <div class="col-md-3 col-xs-3 text" >Val</div>
+                                        <div class="col-md-3 col-xs-3 text" >Test</div>
+                                        <div class="col-md-3 col-xs-3 text" >Total</div>
+                                    </div>
+                                </div>
+                                <div style="" class="section">
+                                    <div class="col-md-3 col-xs-3 data" style="line-height:45px">34,132<br/>37,523</div>
+                                    <div class="col-md-3 col-xs-3 data" style="line-height:45px">4,996<br/>5,343</div>
+                                    <div class="col-md-3 col-xs-3 data" style="line-height:45px">8,564<br/>9,178</div>
+                                    <div class="col-md-3 col-xs-3 data" style="line-height:45px">47,692<br/>52,044</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+			<section id="introduction" class="scrollable-section">
+                <div class="content-container">
+                    <h3>Examples</h3>
+					
+					The videos are featuring object interactions in daily life. Although we did not restrict the video contents,
+				they are mostly about family time, kid playing, social gatherings, sports, pets and musical performances. 
+				
+					<center>
+					  <a><img class="rounded" src="./resources/images/mulexp.jpg" width="900px"></a><br>
+				</center>
+                </div>
+            </section>
+			<section id="download" class="scrollable-section">
+                <div class="content-container">
+                <h3>Download</h3>
+                    <p>
+					<li> <a href='https://xdshang.github.io/docs/vidor.html', target='_Blank'>Videos</a> (you may need <a href='https://drive.google.com/file/d/1NFAOQYZ-D0LOpcny8fm0fSzLvN0tNR2A/view?usp=sharing', target='_Blank'>map_vid_vidorID.json</a> to find the videos), <a href='https://drive.google.com/file/d/1rS5X_t_VSDF4uP3HL1gPQ0ZgWIEuglgk/view?usp=sharing', target='_Blank'>Pre-computed video features.</a></li>
+					<li> <a href='https://drive.google.com/file/d/1Mrf8vd7T2avfaaM4ht82ZLgoRGpCtayC/view?usp=sharing', target='_blank'>Multi-choice Annotations and GloVe Rep.</a>, <a href='https://drive.google.com/file/d/1KtpduE0SViUYFjZq81hlSmgEr7e2QrUa/view?usp=sharing', target='_blank'>BERT Rep.</a></li>
+					<li> <a href='https://drive.google.com/file/d/1wOhytywctSY0WV18g5v4OttyX1TEY8j9/view?usp=sharing', target='_Blank'>Open-ended Annotations and GloVe Rep.</a></li>
+                       Interested in NExT-QA and want to try it? Please refer to our <a href="https://github.com/doc-doc/NExT-QA">Github</a> page on how to use the dataset.
+                    Any questions please feel free to contact Junbin Xiao (<a href="mailto:junbin@comp.nus.edu.sg">junbin@comp.nus.edu.sg</a>).
+					</p>
+                </div>
+            </section>
+					
+            <section id="citation" class="scrollable-section">
+                <div class="content-container">
+				<h3>Citation</h3>
+				  <pre style="font-size:12px;">
+@InProceedings{xiao2021next,
+    author    = {Xiao, Junbin and Shang, Xindi and Yao, Angela and Chua, Tat-Seng},
+    title     = {NExT-QA: Next Phase of Question-Answering to Explaining Temporal Actions},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {9777-9786}
+}
+				  </pre>
+                </div>
+            </section>
+			
+            <section id="acknowledge" class="scrollable-section">
+                <div class="content-container">
+                <h3>Acknowledgement</h3>
+                    <p>
+                        We appreciate the help from Dr.Tao Zhulin's group (CUC) when constructing this page.
+                    </p>
+                </div>
+            </section>
+        </div>
+        <footer class="footer" style="padding-top: 50px;">
+            <div class="container">
+                <hr>
+                <p style="font-style: italic; text-align: center">
+                    Copyright ©  <a class="black" href="https://www.nextcenter.org/">NExT</a>/
+                    <a class="black" href="http://www.nextcenter.org/privacy-policy">Privacy Policy</a> /
+                    <a class="black" href="http://www.nextcenter.org/terms-conditions">Terms &amp; Conditions</a> /
+                </p>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="resources/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="resources/bootstrap.min.js"></script>
+        <script type="text/javascript" src="resources/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="resources/scrolling-nav.js"></script>
+        <script type="text/javascript" src="resources/echarts/echarts.min.js"></script>
+        <script type="text/javascript" src="resources/echarts/echarts-gl.min.js"></script>
+        <script type="text/javascript" src="resources/echarts/ecStat.min.js"></script>
+        <script type="text/javascript" src="resources/echarts/extension/dataTool.min.js"></script>
+        <script type="text/javascript" src="resources/sunburst.js"></script>
+
+</body></html>
